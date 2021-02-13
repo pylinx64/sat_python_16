@@ -1,12 +1,27 @@
 import random
 
-# подбирает случайное число и сохраняет его
-number_random = random.randint(1, 10)
+print('-----Приветсвую в казино 3 топора---------')
+money = input('Введите кол-во $: ')
+money =  int(money)
 
-# человек вводит число 
-number_player = input('Введите число от 1 до 100: ')
+while True:
+	print('ваш счет $: ', money)
+	# подбирает случайное число и сохраняет его
+	number_random = random.randint(1, 10)
 
-if int(number_player) == number_random:
-	print('$$$ WIN $$$')
-else:
-	print('You proigrali ((')
+	# человек вводит число 
+	number_player = input('Введите число от 1 до 100: ')
+
+
+	if int(number_player) == number_random:
+		print('$$$ WIN $$$')
+		money = money + 1000
+
+	elif money < 0:
+		print('Деняк нет ( ')
+		break
+
+	else:
+		print('You proigrali ((')
+		money = money - 100
+	
